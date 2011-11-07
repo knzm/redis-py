@@ -241,7 +241,7 @@ class Redis(threading.local):
             self.connection.disconnect()
             # Connect manually here. If the Redis server is down, this will
             # fail and raise a ConnectionError as desired.
-            connection.connect()
+            self.connection.connect()
             self.connection.send(command, self)
             if subscription_command:
                 return None
